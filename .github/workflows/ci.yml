@@ -2,11 +2,16 @@
 name: .NET CI
 
 on:
-workflow_dispatch:
-push:
+  push:
     branches:
+      - main
       - develop
       - 'feature/**'
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
 
 jobs:
   build-and-test:
